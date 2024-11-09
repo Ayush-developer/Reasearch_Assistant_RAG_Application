@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Setting a white background with small green dots */
+  background-color: #ffffff;
+  background-image: radial-gradient(#51da4b 8%, transparent 10%);
+  background-size: 20px 20px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  padding: 0 20px; /* Add some padding for responsiveness */
+}
+
+h1 {
+  color: #000000; /* Black color */
+  font-weight: 200; /* Thin font weight */
+  margin: 0; /* Remove any default margin */
+  padding-bottom: 10px; /* Add some space below the heading */
+}
