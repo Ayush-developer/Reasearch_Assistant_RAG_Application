@@ -1,1 +1,0 @@
-# Reasearch_Assistant_RAG_Application
