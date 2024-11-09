@@ -1,0 +1,50 @@
+[
+  {
+    "title": "first contact remarks on umbra difference calculus references streams",
+    "summary": "the reference links to the modern classical umbral calculus before that known as blissardian symbolic method are numerous. rota founded and then extended finite operator calculus has links to references which are plenty numerous. the references via links to the difference q calculus umbra way treaded or without even referring to umbra are giant numerous. these reference links now result in counting in thousands the relevant papers . the purpose of the present attempt is to offer one of the keys to enter the world of those thousands of references.",
+    "authors": [
+      "A. K. Kwasniewski"
+    ],
+    "published": "2004-03-08T21:12:56Z"
+  },
+  {
+    "title": "minimal diagrams of virtual links: ii",
+    "summary": "in the present paper we bring together minimality conditions proposed in previous two papers and present some new minimality conditions for classical and virtual knots and links.",
+    "authors": [
+      "Vassily Olegovich Manturov"
+    ],
+    "published": "2005-02-09T08:47:01Z"
+  },
+  {
+    "title": "github repositories with links to academic papers: public access, traceability, and evolution",
+    "summary": "traceability between published scientific breakthroughs and their implementation is essential, especially in the case of opensource scientific software which implements bleedingedge science in its code. however, aligning the link between github repositories and academic papers can prove difficult, and the current practice of establishing and maintaining such links remains unknown. this paper investigates the role of academic paper references contained in these repositories. we conduct a largescale study of 20 thousand github repositories that make references to academic papers. we use a mixedmethods approach to identify public access, traceability and evolutionary aspects of the links. although referencing a paper is not typical, we find that a vast majority of referenced academic papers are public access. these repositories tend to be affiliated with academic communities. more than half of the papers do not link back to any repository. we find that academic papers from toptier se venues are not likely to reference a repository, but when they do, they usually link to a github software repository. in a network of arxiv papers and referenced repositories, we find that the most referenced papers are i highlycited in academia and ii are referenced by repositories written in different programming languages.",
+    "authors": [
+      "Supatsara Wattanakriengkrai",
+      "Bodin Chinthanet",
+      "Hideaki Hata",
+      "Raula Gaikovina Kula",
+      "Christoph Treude",
+      "Jin Guo",
+      "Kenichi Matsumoto"
+    ],
+    "published": "2020-04-01T02:14:15Z"
+  },
+  {
+    "title": "the milnor bar invariants and nanophrases",
+    "summary": "two link diagrams are link homotopic if one can be transformed into the other by a sequence of reidemeister moves and self crossing changes. milnor introduced invariants under link homotopy called barmu. nanophrases, introduced by turaev, generalize links. in this paper, we extend the notion of link homotopy to nanophrases. we also generalize barmu to the set of those nanophrases that correspond to virtual links.",
+    "authors": [
+      "Yuka Kotorii"
+    ],
+    "published": "2011-10-18T07:00:33Z"
+  },
+  {
+    "title": "geometry of biperiodic alternating links",
+    "summary": "a biperiodic alternating link has an alternating quotient link in the thickened torus. in this paper, we focus on semiregular links, a class of biperiodic alternating links whose hyperbolic structure can be immediately determined from a corresponding euclidean tiling. consequently, we determine the exact volumes of semiregular links. we relate their commensurability and arithmeticity to the corresponding tiling, and assuming a conjecture of milnor, we show there exist infinitely many pairwise incommensurable semiregular links with the same invariant trace field. we show that only two semiregular links have totally geodesic checkerboard surfaces; these two links satisfy the volume density conjecture. finally, we give conditions implying that many additional biperiodic alternating links are hyperbolic and admit a positively oriented, unimodular geometric triangulation. we also provide sharp upper and lower volume bounds for these links.",
+    "authors": [
+      "Abhijit Champanerkar",
+      "Ilya Kofman",
+      "Jessica S. Purcell"
+    ],
+    "published": "2018-02-14T22:31:49Z"
+  }
+]

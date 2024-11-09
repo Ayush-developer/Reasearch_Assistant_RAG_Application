@@ -1,0 +1,68 @@
+import requests
+import json
+import spacy
+
+# Load the spaCy model for keyword extraction
+nlp = spacy.load("en_core_web_sm")
+
+# Define common intents for research queries
+INTENT_KEYWORDS = {
+    "survey": ["survey", "review", "overview", "summary"],
+    "application": ["application", "implementation", "use case", "practical"],
+    "comparison": ["comparison", "comparative", "benchmark", "vs"],
+    "experimental": ["experiment", "study", "analysis", "evaluation"],
+}
+
+def detect_intent(query):
+    """
+    Detect the intent of the query based on common keywords.
+    Returns the detected intent if matched, otherwise 'general'.
+    """
+    for intent, keywords in INTENT_KEYWORDS.items():
+        if any(keyword in query.lower() for keyword in keywords):
+            return intent
+    return "general"
+
+def extract_keywords(query):
+    doc = nlp(query)
+    # Extract nouns and proper nouns as keywords
+    keywords = [token.text for token in doc if token.pos_ in ['NOUN', 'PROPN']]
+    return " OR ".join(keywords)
+
+def fetch_arxiv_documents(query, start=0, max_results=5):
+    intent = detect_intent(query)
+    keywords = extract_keywords(query)
+    
+    # Incorporate the intent into the search query if it has a specific category
+    if intent != "general":
+        keywords += f" AND {intent}"
+
+    url = f'http://export.arxiv.org/api/query?search_query=all:{keywords}&start={start}&max_results={max_results}'
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an error for bad responses
+
+        # Parse the XML response
+        root = ET.fromstring(response.content)
+        documents = []
+
+        for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
+            doc = {
+                'title': entry.find('{http://www.w3.org/2005/Atom}title').text,
+                'summary': entry.find('{http://www.w3.org/2005/Atom}summary').text,
+                'authors': [author.find('{http://www.w3.org/2005/Atom}name').text for author in entry.findall('{http://www.w3.org/2005/Atom}author')],
+                'published': entry.find('{http://www.w3.org/2005/Atom}published').text
+            }
+            documents.append(doc)
+
+        with open('../data/raw/arxiv_documents.json', 'w') as f:
+            json.dump(documents, f)
+        print("arXiv documents fetched and saved to data/raw/arxiv_documents.json")
+    
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred: {e}")
+
+if __name__ == "__main__":
+    user_query = input("Enter your research query: ")
+    fetch_arxiv_documents(query=user_query, start=0, max_results=5)
